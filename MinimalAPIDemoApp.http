@@ -1,0 +1,25 @@
+# @MinimalAPIDemoApp_HostAddress = https://localhost:7270
+
+POST {{MinimalAPIDemoApp_HostAddress}}/products
+Content-Type: application/json
+{
+  "Name":"testproduct",
+  "Price": 0.9
+}
+###
+
+GET {{MinimalAPIDemoApp_HostAddress}}/products
+
+###
+
+PUT {{MinimalAPIDemoApp_HostAddress}}/products/4
+Content-Type: application/json
+{
+  "Name":"veggie",
+  "Price": 0.85
+}
+###
+
+DELETE {{MinimalAPIDemoApp_HostAddress}}/products/5
+
+###
