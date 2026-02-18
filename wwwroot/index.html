@@ -10,54 +10,66 @@
     <title>Minimal Grocery</title>
 </head>
 <body>
-    <h1>Products</h1>
-    <h2>Hello from my ASP.NET Core Minimal API App 🛒</h2>
-
-    <pre id="output">Loading...</pre>
-
-    <button id="refresh">🍋‍ Refresh</button>
-    <button id="add">➕ Add Product</button>
-    <input type="search"
-           id="search"
-           class="search">
-    🔍 Search products...
-    <select id="sort">
-        <option value="">Sort by...</option>
-        <option value="name-asc">A-Z</option>
-        <option value="name-desc">Z-A</option>
-        <option value="price-asc">Price⬇️⬆️</option>
-        <option value="price-desc">Price⬆️⬇️</option>
-    </select>
-
-    <!--<input type="file" id="hiddenFileInput" style="display: none;" accept="image/*" />
-    <button id="uploadBtn">📤Upload Image</button>-->
-
-    <label>
-        <input type="file" id="img" style="display: none;" accept="image/*" />
-        📤Upload Image
-    </button>
-    <div id="uploaded"></div>
-
-    <div id="products">
-    </div>
-
-    <div id="imageModal" class="modal hidden" aria-hidden="true">
-        <div class="modal-backdrop" id="modalBackdrop"></div>
-
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <div class="modal-header">
-                <h3 id="modalTitle">Choose an image</h3>
-                <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Controls</h3>
+                <p>Search, sort, and manage products</p>
             </div>
 
-            <div id="modalBody" class="modal-body">
-                <p class="muted">Loading images…</p>
+            <div class="sidebar-section">
+                <button id="refresh" class="btn btn-ghost">🍋 Refresh</button>
+                <button id="add" class="btn btn-primary">➕ Add Product</button>
             </div>
-        </div>
+
+            <div class="sidebar-section">
+                <label class="field">
+                    <span class="label">Search</span>
+                    <input id="search" type="search" placeholder="🔍 Search products..." />
+                </label>
+
+                <label class="field">
+                    <span class="label">Sort</span>
+                    <select id="sort">
+                        <option value="">Sort by…</option>
+                        <option value="name-asc">A-Z</option>
+                        <option value="name-desc">Z-A</option>
+                        <option value="price-asc">Price⬇️⬆️</option>
+                        <option value="price-desc">Price⬆️⬇️</option>
+                    </select>
+                </label>
+
+                <label class="btn btn-ghost upload-btn">
+                    <input type="file" id="img" style="display: none;" accept="image/*" />
+                    📤Upload Image
+                </label>
+                <div id="uploaded"></div>
+                </div>
+           </aside>
+        <main>
+            <h1>Products</h1>
+            <h2>Hello from my ASP.NET Core Minimal API App 🛒</h2>
+
+            <pre id="output">Loading...</pre>
+            <div id="products">
+            </div>
+
+            <div id="imageModal" class="modal hidden" aria-hidden="true">
+                <div class="modal-backdrop" id="modalBackdrop"></div>
+
+                <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                    <div class="modal-header">
+                        <h3 id="modalTitle">Choose an image</h3>
+                        <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+                    </div>
+
+                    <div id="modalBody" class="modal-body">
+                        <p class="muted">Loading images…</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="/app.js"></script>
     </div>
-
-
-    <script src="/app.js"></script>
-
 </body>
 </html>
